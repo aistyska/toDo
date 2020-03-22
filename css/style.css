@@ -1,0 +1,30 @@
+label {
+    width: 39px;
+}
+
+#percentages {
+    min-width: 200px;
+}
+
+tr :nth-child(2) {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+tr :nth-child(3) {
+    padding-left: 0px;
+} 
+
+.tick {
+    padding-top: 0px;
+    color: rgb(143, 142, 142);
+}
+
+.tick.active {
+    color: rgb(13, 167, 13);
+}
+
+.completed {
+    color: rgb(143, 142, 142);
+    text-decoration: line-through;
+}
