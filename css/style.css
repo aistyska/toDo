@@ -6,6 +6,10 @@ label {
     min-width: 200px;
 }
 
+#date {
+    min-width: 140px;
+}
+
 tr :nth-child(2) {
     padding-right: 0px;
     padding-left: 0px;

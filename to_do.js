@@ -3,6 +3,7 @@
 function roundedIcon() {
     let td = document.createElement("td")
     let div = document.createElement("div")
+    div.style.width = "24px"
     div.classList.add("rounded-circle", "text-center", "bg-success")
     let i = document.createElement("i")
     i.classList.add("fas", "fa-check-square", "text-white")
