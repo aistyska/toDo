@@ -184,22 +184,6 @@ function firstTasks() {
 window.onload = firstTasks
 
 
-function addTask() {
-    let task1 = {
-        subject: "New Product Launch",
-        priority: "Normal",
-        "Due Date" : "04/20/2020",
-        status: "In Progress",
-        "Percent Completed": "50"
-    }
-    addRow(task1)
-}
-
-
-// const addBtn = document.querySelector("#add")
-// addBtn.onclick = addTask
-
-
 function formSubmit(event) {
     event.preventDefault()
     $('#addTask').modal('hide')
