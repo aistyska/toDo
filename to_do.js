@@ -114,7 +114,7 @@ function deleteBtn() {
 
 
 function deleteTask(e) {
-    e.target.parentElement.parentElement.remove()
+    e.currentTarget.parentElement.parentElement.remove()
 }
 
 
@@ -196,5 +196,34 @@ function addTask() {
 }
 
 
-const addBtn = document.querySelector("#add")
-addBtn.onclick = addTask
+// const addBtn = document.querySelector("#add")
+// addBtn.onclick = addTask
+
+
+function formSubmit(event) {
+    event.preventDefault()
+    $('#addTask').modal('hide')
+    let task = {}
+    const subject = document.querySelector("#subject").value
+    task.subject = subject
+    let priority = document.querySelector('[name="priority"]:checked').value
+    priority = priority.slice(0, 1).toUpperCase() + priority.slice(1)
+    task.priority = priority
+    const date = document.querySelector("#dueDate").value
+    task["Due Date"] = date
+    const status = document.querySelector("#inputStatus").value
+    task.status = status
+    const perc = document.querySelector('[name="percentCompleted"]:checked').value
+    task["Percent Completed"] = perc
+    addRow(task)
+    form.reset()
+}
+
+function resetForm() {
+    form.reset()
+}
+
+const form = document.querySelector("form")
+
+$('#addTask').on('hidden.bs.modal', resetForm)
+form.onsubmit = formSubmit
