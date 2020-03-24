@@ -114,7 +114,7 @@ function deleteBtn() {
 
 
 function deleteTask(e) {
-    e.target.parentElement.parentElement.remove()
+    e.currentTarget.parentElement.parentElement.remove()
 }
 
 
