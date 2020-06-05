@@ -16,8 +16,100 @@
             <div class="container">
                 <h2 class="mt-3">Užduočių sąrašas</h2>
                 <div>
-                    <button id="add" type="button" class="btn btn-primary my-4"><i class="fas fa-plus"></i> Pridėti užduotį</button>
+                    <button id="add" type="button" class="btn btn-primary my-4" data-toggle="modal" data-target="#addTask"><i class="fas fa-plus"></i> Pridėti užduotį</button>
                 </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="addTask" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="addTaskLabel">Pridėti užduotį</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <form>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="subject">Subject</label>
+                                        <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" name="priority" id="priorityHigh" value="high" checked>
+                                        <label class="custom-control-label rounded-pill text-center text-white bg-danger" for="priorityHigh">
+                                          High
+                                        </label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" name="priority" id="priorityNormal" value="normal">
+                                        <label class="custom-control-label rounded-pill text-center text-white bg-info" for="priorityNormal">
+                                          Normal
+                                        </label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" name="priority" id="priorityLow" value="low">
+                                        <label class="custom-control-label rounded-pill text-center text-white bg-success" for="priorityLow">
+                                          Low
+                                        </label>
+                                    </div>
+                                    <div class="form-row mt-3">
+                                        <div class="form-group col">
+                                            <label for="dueDate">Due date</label>
+                                            <input type="date" class="form-control" id="dueDate">
+                                        </div>
+                                        <div class="form-group col">
+                                            <label for="inputStatus">Status</label>
+                                            <select class="form-control" id="inputStatus">
+                                                <option selected value="New">New</option>
+                                                <option value="In Progress">In Progress</option>
+                                                <option value="Complete">Complete</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <fieldset class="form-group">
+                                        <legend class="col-form-label">Percent completed</legend>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input class="custom-control-input" type="radio" name="percentCompleted" id="comp0" value="0" checked>
+                                            <label class="custom-control-label" for="comp0">
+                                            0%
+                                            </label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input class="custom-control-input" type="radio" name="percentCompleted" id="comp25" value="25">
+                                            <label class="custom-control-label" for="comp25">
+                                            25%
+                                            </label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input class="custom-control-input" type="radio" name="percentCompleted" id="comp50" value="50">
+                                            <label class="custom-control-label" for="comp50">
+                                            50%
+                                            </label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input class="custom-control-input" type="radio" name="percentCompleted" id="comp75" value="75">
+                                            <label class="custom-control-label" for="comp75">
+                                            75%
+                                            </label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input class="custom-control-input" type="radio" name="percentCompleted" id="comp100" value="100">
+                                            <label class="custom-control-label" for="comp100">
+                                            100%
+                                            </label>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Atšaukti</button>
+                                    <button type="submit" class="btn btn-primary">Pridėti</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <thead class="thead-light">

@@ -1,5 +1,5 @@
-label {
-    width: 39px;
+.custom-control-label.rounded-pill {
+    width: 70px;
 }
 
 #percentages {
